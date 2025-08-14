@@ -1,0 +1,185 @@
+
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #e3f0ff 0%, #b6d0f7 40%, #2563eb 100%);
+  animation: gradientBG 16s ease-in-out infinite alternate;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: rgba(243, 249, 255, 0.96);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.13);
+  backdrop-filter: blur(8px) saturate(1.2);
+  border: 1.5px solid rgba(37, 99, 235, 0.13);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+.container:hover {
+  box-shadow: 0 16px 48px 0 rgba(37,99,235,0.18);
+  background: rgba(243,249,255,0.99);
+}
+
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #e0e7ef 0%, #b6d0f7 100%);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.5rem 1rem;
+  box-shadow: 0 1px 4px 0 rgba(37,99,235,0.06);
+}
+
+
+.filters input {
+  flex: 1 1 150px;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  font-size: 1rem;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+  background: #fff url('data:image/svg+xml;utf8,<svg fill="%232563eb" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99c.41.41 1.09.41 1.5 0s.41-1.09 0-1.5l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 0.8rem center;
+  background-size: 1.2rem 1.2rem;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 1px 2px 0 rgba(37,99,235,0.04);
+}
+.filters input:focus {
+  border: 1.5px solid #2563eb;
+  background-color: #e0e7ef;
+  box-shadow: 0 2px 8px 0 rgba(37,99,235,0.10);
+}
+
+
+.filters button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(37,99,235,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+}
+.filters button:hover {
+  background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
+  box-shadow: 0 4px 16px 0 rgba(37,99,235,0.13);
+}
+
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+.job-card {
+  border: none;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 20px;
+  background: rgba(230, 242, 255, 0.97);
+  box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
+  transition: box-shadow 0.25s, transform 0.18s, background 0.18s;
+  position: relative;
+  overflow: hidden;
+}
+.job-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -40px; right: -40px; bottom: -40px;
+  background: linear-gradient(120deg, #b6d0f7 0%, #2563eb 100%);
+  opacity: 0.13;
+  z-index: 0;
+  pointer-events: none;
+}
+.job-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(37,99,235,0.18);
+  transform: translateY(-3px) scale(1.025);
+  background: rgba(230, 242, 255, 1);
+}
+.job-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  color: #2563eb;
+  letter-spacing: 0.01em;
+  z-index: 1;
+  position: relative;
+}
+.job-card p {
+  margin: 0.2rem 0 0.2rem 0;
+  color: #1e40af;
+  z-index: 1;
+  position: relative;
+}
+
+
+.pagination {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+
+.pagination button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(37,99,235,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+}
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #e0e7ef;
+  color: #2563eb;
+  border: 1.5px solid #e0e7ef;
+}
+.pagination button:not(:disabled):hover {
+  background: linear-gradient(90deg, #1e40af 0%, #2563eb 100%);
+  box-shadow: 0 4px 16px 0 rgba(37,99,235,0.13);
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+  .filters input,
+  .filters button {
+    flex: 1 1 100%;
+  }
+  .container {
+    padding: 1.2rem 0.2rem;
+    border-radius: 12px;
+  }
+  .job-card {
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+  }
+}
